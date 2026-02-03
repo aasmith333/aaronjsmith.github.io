@@ -165,3 +165,7 @@ a:hover{ text-decoration: underline; }
 html {
   scroll-behavior: smooth;
 }
+
+[id] {
+  scroll-margin-top: 90px;
+}
