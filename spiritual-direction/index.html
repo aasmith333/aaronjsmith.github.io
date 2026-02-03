@@ -29,22 +29,36 @@ If you are interested in spiritual direction, have questions, or would like to s
 
   <h2>Contact</h2>
 
-  <!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/xykpqvaz"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
+  <form action="https://formspree.io/f/xykpqvaz" method="POST">
+  <p>
+    <label>
+      Name<br>
+      <input type="text" name="name" required>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Email<br>
+      <input type="email" name="email" required>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      Message<br>
+      <textarea name="message" rows="7" required></textarea>
+    </label>
+  </p>
+
+  <!-- Formspree + Turnstile will require you to add their Turnstile snippet/field per settings -->
+  <!-- Follow the exact snippet Formspree shows when CAPTCHA is enabled -->
+
+  <p>
+    <button type="submit">Send</button>
+  </p>
 </form>
+
 
     <section class="hero" style="background-image:url('/aaronjsmith/images/scopio-1caf37b0-d2e3-4bf3-bbb0-91cd533f376b-scaled.jpg');">
   <div class="inner">
