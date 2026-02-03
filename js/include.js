@@ -19,3 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 ;
+window.addEventListener("load", () => {
+  if (location.hash) {
+    const el = document.querySelector(location.hash);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  }
+});
+
