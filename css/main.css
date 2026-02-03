@@ -159,6 +159,14 @@ a:hover{ text-decoration: underline; }
   display: block;
   text-align: center;
 }
+.grid-phrases .item h3 {
+  margin: 0 0 .9rem;
+  text-align: center;
+  font-size: 1.15rem;
+}
+.grid-phrases .item {
+  background: rgba(255,255,255,.75);
+}
 
 
 html {
