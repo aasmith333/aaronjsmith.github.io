@@ -98,7 +98,7 @@ a:hover{ text-decoration: underline; }
 .columns {
   display: flex;
   gap: 2rem;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .columns .text {
