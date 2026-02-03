@@ -1,10 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-include]").forEach(el => {
-    fetch(el.getAttribute("data-include"))
-      .then(res => res.text())
-      .then(html => el.innerHTML = html)
-      .catch(() => {
-        el.innerHTML = "";
+    const path = el.getAttribute("data-include");
+
+    fetch(path)
+      .then(res => {
+        if (!res.ok) throw new Error(`Fetch failed: ${path} (${res.status})`);
+        return res.text();
+      })
+      .then(html => {
+        el.innerHTML = html;
+      })
+      .catch(err => {
+        console.error(err);
+        el.innerHTML = `<p style="color:red;">Include failed: ${path}</p>`;
       });
   });
 });
