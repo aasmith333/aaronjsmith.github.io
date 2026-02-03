@@ -122,3 +122,34 @@ a:hover{ text-decoration: underline; }
   }
 }
 
+.grid-phrases {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.grid-phrases .item {
+  padding: 1.25rem 1.25rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255,255,255,.6);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .grid-phrases {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .grid-phrases {
+    grid-template-columns: 1fr;
+  }
+}
+
+
