@@ -1,28 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("include.js running on:", window.location.pathname);
+  const includeEls = Array.from(document.querySelectorAll("[data-include]"));
 
-  document.querySelectorAll("[data-include]").forEach(el => {
+  // If there are no includes, still handle hash scroll.
+  if (includeEls.length === 0) {
+    scrollToHash();
+    return;
+  }
+
+  let remaining = includeEls.length;
+
+  includeEls.forEach(el => {
     const path = el.getAttribute("data-include");
-    console.log("including:", path);
 
     fetch(path)
-      .then(res => {
-        console.log("fetched:", path, res.status);
-        return res.text();
-      })
+      .then(res => res.text())
       .then(html => {
         el.innerHTML = html;
       })
-      .catch(err => {
-        console.error("include failed:", path, err);
+      .catch(() => {
+        el.innerHTML = "";
+      })
+      .finally(() => {
+        remaining -= 1;
+
+        // When all includes are done, scroll to the hash.
+        if (remaining === 0) {
+          // Wait a tick so layout settles, then scroll.
+          setTimeout(scrollToHash, 0);
+        }
       });
   });
-});
-;
-window.addEventListener("load", () => {
-  if (location.hash) {
-    const el = document.querySelector(location.hash);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+
+  function scrollToHash() {
+    if (!location.hash) return;
+
+    const target = document.querySelector(location.hash);
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 });
+
 
