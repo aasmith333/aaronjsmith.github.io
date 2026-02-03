@@ -91,3 +91,7 @@ a:hover{ text-decoration: underline; }
 
 .hero .panel a { color: white; }
 
+.center {
+  text-align: center;
+}
+
