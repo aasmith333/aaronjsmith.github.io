@@ -95,3 +95,30 @@ a:hover{ text-decoration: underline; }
   text-align: center;
 }
 
+.columns {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.columns .text {
+  flex: 2;
+}
+
+.columns .image {
+  flex: 1;
+}
+
+.columns img {
+  max-width: 100%;
+  border-radius: 14px;
+  display: block;
+}
+
+/* Stack on small screens */
+@media (max-width: 700px) {
+  .columns {
+    flex-direction: column;
+  }
+}
+
