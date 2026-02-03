@@ -64,3 +64,30 @@ a:hover{ text-decoration: underline; }
   color: var(--muted);
   font-size: 15px;
 }
+
+.hero {
+  min-height: 320px;
+  display: flex;
+  align-items: end;
+  padding: 3.5rem 1.25rem;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero .inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero .panel {
+  max-width: 62ch;
+  padding: 1.25rem 1.25rem 1.1rem;
+  border-radius: 14px;
+  background: rgba(0,0,0,.45);
+  color: white;
+}
+
+.hero .panel a { color: white; }
+
