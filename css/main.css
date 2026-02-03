@@ -68,7 +68,8 @@ a:hover{ text-decoration: underline; }
 .hero {
   min-height: 320px;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
+;
   padding: 3.5rem 1.25rem;
   background-size: cover;
   background-position: center;
@@ -146,9 +147,19 @@ a:hover{ text-decoration: underline; }
   line-height: 1.55;
   text-align: left;
 }
-.grid-phrases .item {
+
+.grid-phrases .item p {
+  margin: 0 0 .75rem;
+}
+
+.grid-phrases .item p:last-child {
+  margin-bottom: 0;
+}
+.grid-phrases .item p strong {
+  display: block;
   text-align: center;
 }
+
 
 html {
   scroll-behavior: smooth;
