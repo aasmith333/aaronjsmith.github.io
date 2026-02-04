@@ -169,3 +169,62 @@ a:hover{ text-decoration: underline; }
     grid-template-columns: 1fr;
   }
 }
+
+/* Substack tiles */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+  align-items: stretch;
+}
+
+.tile {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255,255,255,.75);
+  padding: 1.25rem;
+  height: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.tile img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex: 0 0 auto;
+}
+
+.tile h3 {
+  margin: 0 0 .35rem;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.tile p {
+  margin: 0 0 .85rem;
+  color: var(--muted);
+}
+
+.tile .actions a {
+  display: inline-block;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .5rem .75rem;
+  text-decoration: none;
+  background: rgba(255,255,255,.6);
+}
+
+.tile .actions a:hover {
+  background: rgba(255,255,255,.95);
+}
+
+@media (max-width: 700px) {
+  .tiles {
+    grid-template-columns: 1fr;
+  }
+}
+
